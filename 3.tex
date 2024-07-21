@@ -1,5 +1,6 @@
 \chapter{数列、数学归纳法、数列的极限}
 
+\section*{一、数列的一般概念}
 \section{数列的定义}
 
 \noindent
@@ -565,6 +566,8 @@ $\therefore\quad $通项公式为$a_n=\frac{1}{2}\cdot\left(\frac{3}{2}\right)^{
 \end{enumerate}
 \end{multicols}
 \end{enumerate}
+
+\section*{二、等差数列}
 
 \section{等差数列的有关概念}
 
@@ -1162,15 +1165,10 @@ $$S_{100}=\frac{1+100}2\times100=5050$$
 岁时，很快地算出$1+2+\cdots+100$的结果时所用的解法)。 
 \end{solution}
 
-
-
-
-
-
-
-
-
-\begin{example}
+\noindent
+\begin{minipage}{.55\textwidth}
+    \CTEXindent
+    \begin{example}
 图5.6表示一个堆放
 铅笔的V形架，它的最下面一
 层放一支铅笔，在上每一层都
@@ -1180,124 +1178,801 @@ $$S_{100}=\frac{1+100}2\times100=5050$$
 
 答案是7260支铅笔，请读者完成计算过程。
 \end{example}
+\end{minipage}\hfill
+\begin{minipage}{.4\textwidth}
+\centering
+\begin{tikzpicture}[scale=.5]
+ \foreach \x in {1,2,3,...,6}
+{
+    \draw[very thick](\x/2-.5-.25*5,.46+.45*5)circle(.23);
+}  
+\foreach \x in {1,2,3,...,5}
+{
+    \draw[very thick](\x/2-.5-.25*4,.46+.45*4)circle(.23);
+}  
+\foreach \x in {1,2,3,4}
+{
+    \draw[very thick](\x/2-.5-.25*3,.46+.45*3)circle(.23);
+}  
+\foreach \x in {1,2,3}
+{
+    \draw[very thick](\x/2-.5-.25*2,.46+.45*2)circle(.23);
+}  
+\foreach \x in {1,2}
+{
+    \draw[very thick](\x/2-.5-.25,.46+.45)circle(.23);
+}  
+\foreach \x in {1}
+{
+    \draw[very thick](\x/2-.5,.46)circle(.23);
+}  
+\draw[thick](120:8)--(0,0)--(60:8);
+
+\foreach \x in {7,8,...,14,15}
+{
+    \draw[dashed](60:\x/2)--(120:\x/2);
+}
+\foreach \x in {1,2}
+{
+    \draw[very thick](\x/2-.5-.25*13,.46+.45*13)circle(.23);
+    \draw[very thick](-\x/2+.5+.25*13,.46+.45*13)circle(.23);
+}  
+
+
+
+\end{tikzpicture}
+\captionof{figure}{}
+\end{minipage}
 
 \begin{example}
     正偶数组成的数列$2,4,6,\ldots$的前多少项的和等于9900？
 \end{example}
 
 \begin{analyze}
-    
+    已知：$a_1=2$，公差$d=2$, $S_n=9900$，求$n$。因此，我们利用公式$S_n=n\cdot a_1+\frac{n(n-1)}{2}d$求解。
 \end{analyze}
 
+\begin{solution}
+    由已知，得
+\[n\cdot 2+\frac{n(n-1)}{2}=9900\]
+    化简得
+\[    n^2+n-9900=0\]
+    解得$n=99$或$n=-100$（后者不合题意，舍去）。
 
+    答：数列的前99项之和为9900。
+\end{solution}
 
 
 
+\begin{example}
+求集合$M=\{m\mid m=7n,\; n\in\N,\;  \text{且}m<100\}$中元素的个数，并求这些元素之和。
+\end{example}
 
+\begin{solution}
+$\because\quad     7n<100$
+\qquad\qquad
+$\therefore\quad n<\frac{100}{7}=14\frac{2}{7}$
 
+由于满足上面不等式的自然数$n$共有14个，故集合$M$里的元素共14个，将它们从小到大列出，就是
+\[7,\quad 7\x2,\quad 7\x3,\; \ldots,\; 7\x14\]
+即$7,\;14,\;21,\ldots,98$
 
+这个数列是以首项为7，第14项为$a_{14}=98$的等差数列，因此它们的和为
+\[S_{14}=\frac{14(7+98)}{2}=735\]
 
+答：集合$M$里共有14个元素，它们的和为735。
+\end{solution}
 
+这个例说明：在100以内的自然数中，共有14个数能被4
+7整除，且它们的和为735。
 
 
+\begin{example}
+    有一个凸多边形，它的各内角的度数成等差数列，其最小角为$60^{\circ}$，公差为$20^{\circ}$，求它的边数。
+\end{example}
 
+\begin{solution}
+    设此多边形的边数为$n$，因为它的内角度数成等差数列，且公差是$20^{\circ}$，第一个角是$60^{\circ}$，所以
+\[S_n=n\cdot 60+\frac{n(n-1)}{2}\cdot 20\]
 
+另一方面，凸多边形内角和为$(n-2)\cdot 180^{\circ}$，所以
+\[n\cdot 60+n(x-1)\cdot 20=(m-2)\cdot 180\]
+化简整理，得
+\[n^2-13n+36=0\]
+解之，得
+$n=4$，或$n=9$.
 
+若$n=9$，则$a_9=a_1+(9-1)\cdot d=60+8\x20>180$, 
+所以$n=9$不合题意，应舍去。
 
+答：这个多边形的边数是4。
+\end{solution}
 
+观察公式，
+$S_n=na_1+\frac{n(n-1)}{2}d$是项数$n$的二次型
+代数式，我们有下面的定理
 
+\begin{thm}
+    {定理2} 设数列$\{a_n\}$的前$n$项和为$S_n$，求证数列$\{a_n\}$是等差数列的充要条件是$S_n=an^2+bn$（其中$a$，$b$为已知常数）。
+\end{thm}
 
+\begin{proof}
+    先证“必要性”，即证“若$\{a_n\}$是等差数列，则$S_n=a\cdot n^2+bn$.”证明如下：
 
+$\because\quad \{a_n\}$ 是等差数列，
 
+$\therefore\quad S_n=na_1+\frac{n(n-1)}{2}d=\frac{d}{2}n^2+\left(a_1-\frac{d}{2}\right)n$
 
+只需令$\frac{d}{2}=a,\quad a_1-\frac{d}{2}=b$，则有$S_n=an^2+bn$.
 
+再证“充分性”，即证“若数列的前$n$项和$S_n=an^2+bn$，则$\{a_n\}$是等差数列”，证明如下：
+$\because\quad S_n=an^2+bn$
 
+$\therefore\quad a_n=\begin{cases}
+    S_n-S_{n-1}=2an-a+b, & n\ge 2\\
+    S_1=a+b, & n=1
+\end{cases}$
 
+$\because\quad n=1$时，$2an-a+b=a+b=S_1$
 
+$\therefore\quad $数列$\{a_n\}$的通项公式为$a_n=2an-a+b\; (n\ge 1)$，由定理1，$\{a_n\}$是等差数列。
+\end{proof}
 
 
+\begin{example}
+    设$\{a_n\}$为等差数列，且$S_{10}=100$, $S_{100}=10$，试求前110项之和$S_{110}$.
+\end{example}
 
+\begin{analyze}
+解法之一是，利用等差数列的求和公式$S_n=a_n+\frac{n(n-1)}{2}d$
+，及条件$S_{10}=100$, $S_{100}=10$，列出关于$a_1$与$d$的二元方程组，解出$a_1$与$d$来，然后再求$S_{110}$（请读者自己来完成）.
 
+解法之二是，利用定理2，可设$S_n=an^2+bn$，依据条件用待定系数法求出$a$与$b$来，再求$S_{110}$。
+\end{analyze}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\begin{solution}
+因为$\{a_n\}$为等差数列，由定理2可设$S_n=an^2+bn$，由已知，有
+\[\begin{cases}
+    a\cdot 10^2+b\cdot 10=100\\
+    a\cdot 100^2+b\cdot 100=10
+\end{cases}\]
+解之，得
+$\begin{cases}
+    a=-\frac{11}{100}\\[1.5ex]
+    b=\frac{111}{10}
+\end{cases}$
+
+$\therefore\quad S_{110}=-\frac{11}{100}\x 110^2+\frac{111}{10}\x 110=-110$
+\end{solution}
+
+
+
+\begin{example}
+    已知等差数列中，$a_3+a_{18}=100$，求$S_{20}$.
+\end{example}
+
+\begin{solution}
+$\because\quad a_3+a_{18}=a_1+a_{20}=100$
+
+$\therefore\quad S_{20}=\frac{a_1+a_{20}}{2}\x20=\frac{100}{2}\x 20=1000$.
+\end{solution}
+
+
+\begin{example}
+    已知等差数列$\{a_n\}$的通项公式为$a_n=3n-26$，求其前$n$项和$S_n$的最大值或最小值。
+\end{example}
+
+\begin{solution}
+ $\because\quad    a_1=3\x 1-26=-23<0,\quad d=3>0$
+
+ $\therefore\quad S_n$有最小值，无最大值。
+
+ 设$a_n=3n-26\le 0$，得
+\[n\le \frac{26}{3}=8\frac{2}{3}\]
+即数列的前8项均为负数，而第9项$a_9=3\x9-26=1>0$，故前8项之和$S_8$是$S_n$的最小值。其最小值为
+\[S_8=8\x(-23)+\frac{8\x7}{2}\x3=-100\]
+\end{solution}
+
+\begin{example}
+    已知等差数列$\{a_n\}$中，$a_n=32$，公差为$-4$，求它的前$n$项和$S_n$的最大值或最小值。
+\end{example}
+
+\begin{solution}
+    因为$a_1=32$, $d=-4<0$，所以数列的前$n$项和$S_n$有最大值，无最小值。
+
+    设$a_n=32+(n-1)\x(-4)\ge 0$, 求得$n\le 9$, 
+即数列的前9项为非负数，而第10项开始为负数，又$a_0=0$, 所以前8项的和与前9项的和相等，即$S_8=S_9$，且它们是$S_n$的最大值，最大值是：
+\[S_8=32\x8+\frac{8\x7}{2}\x(-4)=144\]
+或
+\[S_9=32\x9+\frac{9\x8}{2}\x(-4)=144\]
+
+\textbf{另解：}因为等差数列前$n$项和$S_n$当$d\ne 0$时是$n$的二次式，所以也可以借助于求二次函数的极值的方法，来求$S_n$的最大值或最小值。
+
+如例5.16中，$a_n=3n-26$，所以$a_1=-23$，于是
+\[\begin{split}
+    S_n=\frac{n(-23+3n-26)}{2}&=\frac{3}{2}n^2-\frac{49}{2}n\\
+    &=\frac{3}{2}\left(n-\frac{49}{6}\right)^2-\frac{3}{2}\x \left(\frac{49}{6}\right)^2
+\end{split}\]
+然而，这里$n\in\N$，所以$n-\frac{49}{6}\ne 0$，只有当$\left|n-\frac{49}{6}\right|$最小时，即$n=8$时，$S_n$取得最小值，此时，$(S_n)_{\min}=\frac{3}{2}\x 8^2-\frac{49}{2}\x 8=-100$
+
+又如例5.17中，有
+\[\begin{split}
+    S_n=\frac{n(32+32-4n-4)}{2}&=-2n^2+34n\\
+    &=-2\left(n-\frac{17}{2}\right)^2+2\x \left(\frac{17}{2}\right)^2
+\end{split}\]
+当$\left|n-\frac{49}{6}\right|$最小，即$n=8$或$n=9$时，$S_n$取得最大值144.
+\end{solution}
+
+\begin{example}
+    求数列$\left\{\lg\left(1000\sin^n\frac{\pi}{4}\right)\right\}$的前$n$项之和$S_n$的最大值.
+\end{example}
+
+\begin{solution}
+\[\begin{split}
+\because\quad a_n-a_{n-1}=\lg1000\sin^n\frac{\pi}{4}-\lg1000\sin^{n-1}\frac{\pi}{4}   
+&=\lg\frac{1000\sin^n\frac{\pi}{4}}{1000\sin^{n-1}\frac{\pi}{4}}\\
+&=\lg\sin\frac{\pi}{4}=-\frac{1}{2}\lg 2
+\end{split}\]
+
+$\therefore\quad $该数列是等差数列，其公差为$-\frac{1}{2}\lg 2$，首项$a_1=\lg1000 \sin\frac{\pi}{4}=3-\frac{1}{2}\lg2$. 因为$a_i>0$, $d<0$，故$S_n$有最大值。
+
+设$a_n=\lg 1000\sin^n\frac{\pi}{4}\ge 0$, 得
+\[3-\frac{n}{2}\lg2\ge 0\quad \Rightarrow\quad n\le \frac{6}{\lg 2}\approx 19.9\]
+
+答：$S_{19}$是$S_n$的最大值，其值$S_{19}\approx 28.40$.
+
+（读者可利用另一种方法求其最大值）
+\end{solution}
+
+\begin{ex}
+\begin{enumerate}
+    \item 根据下列各题的条件，求相应的等差数列{am}的前n项和"S
+\begin{enumerate}[(1)]
+ \item $a_1=5,\quad a_n=65,\quad n=10$;
+\item $a_1=100,\quad d=-2,\quad n=50$;
+\item $a_1=\frac{2}{3},\quad a_n=-\frac{3}{2},\quad n=14$;
+\item $a_1=14.5,\quad d=0.7,\quad a_n=32$.   
+\end{enumerate}
+
+    \item \begin{enumerate}[(1)]
+        \item 求自然数列中前100个奇数的和；
+        \item 求前100个自然数中，所有被3除余2的自然数的个数，以及它们的和；
+        \item 两位自然数中被7除余1的各数之和。
+    \end{enumerate} 
+
+    \item 根据下列各题中的条件，求相应的等差数列$\{a_n\}$中的有关未知数：
+\begin{enumerate}[(1)]
+    \item $a_1=20,\quad a_n=54,\quad S_n=999$，求$d$和$n$;
+\item $d=\frac{1}{3},\quad n=37,\quad S_n=629$，求$a_1$和$a_n$;
+\item $a_1=\frac{5}{6},\quad d=-\frac{1}{6},\quad S_n=-5$，求$n$和$a_n$;
+\item $d=2,\quad n=15,\quad a_n=-10$，求$a_1$和$S_n$.
+\end{enumerate}
+\item \begin{enumerate}[(1)]
+\item 在正整数集合里，有多少个三位数，并求出它们的和；
+\item 在三位正整数的集合中有多少个数是7的整数倍？并求它们的和，
+\item 求等差数列$13,15,17,\ldots,81$的各项之和；
+\item 求等差数列$10,7,4,\ldots,-47$的各项之和。
+\end{enumerate}
+\item 根据下列条件，求数列前多少项的和最大（或最小），并求出其最大值或最小值.
+\begin{enumerate}[(1)]
+    \item $\{a_n\}$是等差数列，且
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+    \item $a_2=7,\quad a_6=23$;
+    \item $a_{20}=-1,\quad d=-\frac{1}{2}$.
+\end{enumerate}
+\end{multicols}
+
+\item 数列$\{a_n\}$的通项公式是
+\begin{multicols}{2}
+    \begin{enumerate}[(a)]
+        \item $a_n=-5n+2$;
+        \item $a_n=33-3n$.
+    \end{enumerate}
+    \end{multicols}
+
+\item 数列$\{a_n\}$的前$n$项和为 $S_n=2n^2-23n+\frac{123}{2}$
+\end{enumerate}
+\end{enumerate}
+\end{ex}
+
+\section*{习题二}
+\begin{center}
+    \bfseries A
+\end{center}
+
+\begin{enumerate}
+    \item 已知数列$\{a_n\}$是等差数列。
+\begin{enumerate}[(1)]
+\item 若$a_2+a_9+a_{12}+a_{19}=100$，求$S_{20}$;
+\item 若$a_{10}=20$，求$S_{19}$;
+\item 若$a_4=7$, $a_9=5$，求$a_{19}$和$a_{20}$.
+\end{enumerate}
+
+    \item 三个数成等差数列，它们的和等于18，它们的平方和等于116，求这三个数。
+    \item  \begin{enumerate}[(1)]
+        \item 某等差数列$\{a_n\}$的通项公式是$a_n=3n-2$，求它的前$n$项和；
+    \item 某等差数列$\{a_n\}$的前$n$项和公式是$S_n=5n^2+3n$，求它的前3项及通项公式。
+    \end{enumerate}   
+    \item     一个等差数列的第6项是5，第3项与第8项之和也是5，求该数列的前9项之和。
+    \item     一个屋顶的某一斜面成等腰梯形，最上面一层铺了瓦片21块，往下每一层多铺一块，斜面上共铺了瓦片19层，共铺了多少块瓦？
+    \item     一个剧场设置了20排座位，第一排38个座位，往后每一排比前一排多2个座位。这个剧场一共设置了多少个座位？
+\item \begin{enumerate}[(1)]
+    \item 一个等差数列的第1项是5.6，第6项是20.6，求它的第四项。
+    \item  一个等差数列第3项是9，第9项是3，求它的第2项。
+    \item 一个等差数列第5项是$5a-b$，第2项是$2a+2b$，求第3项和第6项。
+    \end{enumerate}
+\item \begin{enumerate}[(1)]
+\item 在12和60之间，插入3个数，使这5个数构成等差数列，求这三个数。
+\item 在8和36之间插入6个数，使这8个数构成等差数列，求这六个数。
+\item 在$a$和$b$之间插入10个数，使这12个数构成等差数列，求这个数列的第六项。
+\end{enumerate}
+\item 在通常情况下，从地面到1万米高空，高度每增加1千米，气温就下降某一固定数值。如果1千米高度的气温是$8.5^{\circ}{\rm C}$，5千米高度的气温是$-17.5^{\circ}{\rm C}$。求2千米、4千米及8千米高度的气温。
+\item 安装在一个公共轴上的5个皮带轮的直径成等差数列，其中最大的与最小的皮带轮直径分别是216毫米与120毫米，求中间三个皮带轮的直径。
+
+\end{enumerate}
+
+
+
+
+
+\begin{center}
+    \bfseries B
+\end{center}
+
+\begin{enumerate}\setcounter{enumi}{10}
+    \item  某多边形的周长等于195cm，所有各边的长成等差数列，最大的边长等于40cm，公差是3cm，求多边形的边数。
+    \item  一个梯形两条底边的长分别是12cm和22cm，将梯形的一条腰10等分，过每个分点画平行于梯形底边的直线，求这些直线夹在梯形两腰间的线段的长度之和。
+    \item  长方体的三条棱的长成等差数列，它的对角线的长是$5\sqrt{2}$cm，全面积是$94{\rm cm^2}$，求它的体积。
+    \item  一个凸多边形的各内角的度数成等差数列，其公差为$5^{\circ}$，又最小内角是$120^{\circ}$，求这个多边形的边数。
+    \item 已知数$\lg1000,\; \lg1000\cos\frac{\pi}{3},\; \lg1000\cos^2 \frac{\pi}{3},\ldots, 
+    \lg1000\cos^{n-1}\frac{\pi}{3},\ldots$的前多少项的和最大，并求出其
+    最大值。
+\end{enumerate}
+
+\section*{三、等比数列}
+\section{等比数列的有关概念}
+观察下面的数列：
+\begin{align}
+ &1,\; 2,\; 4,\; 8,\; 16,\ldots  \tag{1}\\
+&5,\; 5,\; 5,\; 5,\ldots\tag{2}\\
+&1,\; -\frac{1}{2},\; \frac{1}{4},\; -\frac{1}{8},\; \frac{1}{16},\;\ldots \tag{3}   
+\end{align}
+
+\begin{itemize}
+\item 数列（1）中，从第2项起每一项与前一项的比都等于2;
+\item 数列（2）中，从第2项起每一项与前一项的比都等于1;
+\item 数列（3）中，以第2项起每一项与前一项的比都等于$-\frac{1}{2}$.
+\end{itemize}
+
+它们的共同特点是：以第2项起，每一项与它的前一项之比都等于同一个非零常数，通常把这个常数记作$q$，即
+\[\frac{a_n}{a_{n-1}}=q\quad (n\ge 2,\; n\in\N,\; q\text{为常数},\; q\ne 0)\]
+这类数列叫做\textbf{等比数例}，常数$q$叫做等比数列的\textbf{公比}。上述三个等比数列的公比分别是2, 1和$-\frac{1}{2}$．数列（2）说明一个非零常数列一定是等比数列，且它的公比为1。
+
+由等比数列的定义可知，一个等比数列中的任何一项都不能是零。
+
+如果有三个数$x$、$G$、$y$组成等比数列，那么$G$叫做$x$和$y$的\textbf{等比中项}。
+
+根据等比数列的定义可知$\frac{G}{x}=\frac{y}{G}$，所以$G^2=xy$，
+因此$G=\pm\sqrt{xy}$.
+
+由此可知，在实数集合内，只有当$x$与$y$是同号的两个数时，它们才有等比中项，当两个数有等比中项时，必有两个等比中项，且它们互为相反数。
+
+容易看出，在一个无穷的等比数列中，从第2项起，每一项都是它的前一项与后一项的等比中项。
+
+
+\begin{example}
+已知数列的通项公式为$a_n=\frac{1}{3}\x 2^n$，求证：
+\begin{enumerate}[(1)]
+\item 数列$\{a_n\}$是等比数列，并求其公比；
+\item 求出数列的首项及第10项；
+\item 判断256和$170\frac{2}{3}$是不是该数列中的项。如果是，是第几项？
+\end{enumerate}
+\end{example}
+
+\begin{solution}
+\begin{enumerate}[(1)]
+    \item $\because\quad \frac{a_n}{a_{n-1}}=\frac{\frac{1}{3}\x 2^n}{\frac{1}{3}\x 2^{n-1}}=2$（常数）
+    
+$\therefore\quad $数列是等比数列，且公比是2。
+\item 首项$a_1=\frac{1}{3}\x2=\frac{2}{3}$, $a_{10}=\frac{1}{3}\x2^{10}=\frac{1024}{3}$.
+\item 设$a_n=\frac{1}{3}\x2^n=259$，则$n=8+\log_2 3$不是整数，所以256不是数列中的项。
+
+设$a_n=\frac{1}{3}\x2^n=170\frac{2}{3}=\frac{512}{3}$则$n=9$，所以$170\frac{2}{3}$是
+该数列的第9项。
+\end{enumerate}
+\end{solution}
+
+
+\section{等比数列的通项公式}
+如果等比数列$\{a_n\}$的第一项为$a_1$，公比为$q$，那么根据等比数列的定义得
+\[\begin{split}
+  a_2&=a_1q,\\
+a_3&=a_2q=(a_1q)q=a_1q^2,\\
+a_4&=a_3q=(a_1q^2)q=a_1q^3.\\  
+\cdots &\cdots \cdots \cdots \cdots \cdots 
+\end{split}\]
+
+由此我们可以归纳出，数列的通项公式是
+\[a_n=a_1q^{n-1}\quad (a_1\ne 0,\; q\ne 0)\]
+其正确性，可用数学归纳法给予证明。
+
+上面的公式还可用下面的方法得到：
+\[\begin{split}
+    a_1&=a_1\\
+    \frac{a_2}{a_1}&=q\\
+    \frac{a_3}{a_2}&=q\\
+    \cdots&\cdots\cdots\\
+    \frac{a_{n-1}}{a_{n-2}}&=q\\
+    \frac{a_n}{a_{n-1}}&=q
+\end{split}\]
+将这$n$个等式的等号两边分别相乘，即可得出
+\[a_n=a_1q^{n-1}\]
+上面这个方法，称之为\textbf{迭乘法}。
+
+等比数列通项公式还可以改写成
+\[a_n=\frac{a_1}{q}\cdot q^n=cq^n\]
+其中$c=\frac{a_1}{q}$，是一个不为零的常数。
+
+要确定函数$y=c\cdot q^x$需要两个独立条件，因此要确定等比数列的通项公式，也需要两个独立条件。
+
+\begin{example}
+    求等比数列$\frac{\sqrt{2}}{2},\; -1,\; \sqrt{2},\; -2,\ldots$的第100项。
+\end{example}
+
+\begin{solution}
+$\because\quad a_1=\frac{\sqrt{2}}{2},\quad q=-\sqrt{2}$
+
+$\therefore\quad a_{100}=\frac{\sqrt{2}}{2}\cdot \left(-\sqrt{2}\right)^{100-1}=-\frac{\sqrt{2}}{2}\cdot \left(\sqrt{2}\right)^{99}=-2^{49}$
+\end{solution}
+
+\begin{example}
+    一个等比数列的第3项与第4项分别是12与18，求它的第1项，第2项，和它的通项公式。
+\end{example}
+
+\begin{solution}
+设这个数列为$\{a_n\}$，则它的公比
+\[q=\frac{a_4}{a_3}=\frac{18}{12}=\frac{3}{2}\]
+
+$\because\quad a_3=a_2\cdot q=a_2\cdot \frac{3}{2}=12$
+
+$\therefore\quad a_2=8$
+
+$\because\quad a_2=a_1q=a_1\cdot \frac{3}{2}=8$
+
+$\therefore\quad a_1=\frac{16}{3},\quad a_n=a_1\cdot q^{n-1}=\frac{16}{3}\cdot \left(\frac{3}{2}\right)^{n-1}=2^{5-n}\cdot 3^{n-2}$
+\end{solution}
+
+
+
+\begin{example}
+    培育水稻新品种，如果得到第一代120粒种子，并且从第一代起，以后各代的每一粒种子都可以得到下一代的120粒种子，到第五代大约可以得到这种新品种的种子多少粒（保留两位有效数字）？
+\end{example}
+
+\begin{solution}
+由于每代的种子数是它的前一代种子数的120倍，逐代的种子数组成等比数列，记作$\{a_n\}$，其中$a_1=120$, $q=120$, 因此
+\[a_5=120\x120^{5-1}\approx 2.5\x10^{10}\]
+答：到第五代大约可以得到种子$2.5\x10^{10}$粒。
+\end{solution}
+
+    
+\begin{example}
+    求证数列$\{a_n\}$（其中$a_k\ne 0,\; k=1,2,\ldots$）是等比
+数列的充要条件是其通项公式为$a_n=c\cdot q^n$（其中$c$、$q$均为非零常数）.
+\end{example}
+
+\begin{proof}
+先证“充分性”，即证“若$a_n=c\cdot q^n$，则$\{a_n\}$成等比数列”，证明如下：
+
+$\because\quad a_n=c\cdot q^n\quad (cq\ne 0)$
+
+$\therefore\quad \frac{a_n}{a_{n-1}}=\frac{c\cdot q^n}{c\cdot q^{n-1}}=q$（非零常数），
+
+$\therefore\quad \{a_n\}$是等比数列。
+
+再证“必要性”，即“若$\{a_n\}$成等比数列，则$a_n=cq^n$”.
+
+$\because\quad\{a_n\}$成等比数列，
+
+$\therefore\quad a_n=a_1\cdot q^{n-1}=\frac{a_1}{q}\cdot q^n$
+
+令$c=\frac{a_1}{q}$，即得到$a_n=c\cdot q^n$·
+
+综上可知，$\{a_n\}$成等比数列的充要条件$a_n=c\cdot q^n\quad (cq\ne 0)$
+\end{proof}
+
+\begin{example}
+    在1和8之间插入5个数，使得这7个数组成等比数列，试求插入的5个数。
+\end{example}
+
+\begin{solution}
+    设数列的公比为$q$. 由$a_1=1$得
+\[a_7=8=a_1 q^6=q^5\]
+$\therefore\quad q=\pm\sqrt{2}$
+
+答：插入的5个数是$\sqrt{2},\; 2,\; 2\sqrt{2},\; 4,\; 4\sqrt{2}$或$-\sqrt{2},\; 2,\; -2\sqrt{2},\; 4,\; -4\sqrt{2}$.
+\end{solution}
+
+\begin{example}
+    已知$\{a_n\}$为等比数列，公比为$q$，求证
+$a_n=a_mq^{n-m}$.
+\end{example}
+
+\begin{proof}
+    由等比数列通项公式，得
+\[a_n=a_1q^{n-1},\qquad a_m=a_1q^{m-1}\]
+
+$\therefore\quad a_n=a_1q^{m-1}\cdot q^{n-m}=a_m q^{n-m}$
+\end{proof}
+
+
+\begin{example}
+    已知$\{a_n\}$为等比数列且$a_m=16$, $a_{m+4}=9$，求数列的通项公式。
+\end{example}
+
+\begin{solution}
+设数列的公比为$q$，则$a_{m+4}=a_m q^4$，即
+\[q^4=\frac{9}{16}\quad \Rightarrow\quad q=\pm\frac{\sqrt{3}}{2}\]
+
+$\therefore\quad a_n=a_m\cdot q^{n-m}=16\x \left(\pm\frac{\sqrt{3}}{2}\right)^{n-m}$
+\end{solution}
+
+
+\begin{example}
+    设$\{a_n\}$为等比数列。$k,\ell,m,n\in\N$，若$k+\ell=m+n$，则$a_k\cdot a_{\ell}=a_m\cdot a_n$
+\end{example}
+
+\begin{proof}
+    设公比为$q$，则
+\[\begin{split}
+    a_{k}\cdot a_{\ell}&=a_1q^{k-1}\cdot a_1q^{\ell-1}=a^2_1\cdot q^{k+\ell-2}\\
+    a_{m}\cdot a_{n}&=a_1q^{m-1}\cdot a_1q^{n-1}=a^2_1\cdot q^{m+n-2}\\
+\end{split}\]
+
+$\because\quad k+\ell=m+n$
+
+$\therefore\quad a_k\cdot a_{\ell}=a_m\cdot a_n$
+\end{proof}
+
+\begin{rmk}
+    此例说明，在等比数列中，当两项的项数和与另两项项数和相等时，对应的两项之积也相等。这是等比数列的重要性质之一。
+
+特别地，$a_1\cdot a_n=a_2\cdot a_{n-1}=a_3\cdot a_{n-2}=\cdots$.
+\end{rmk}
+
+\begin{ex}
+\begin{enumerate}
+    \item 解下列各题：
+\begin{enumerate}[(1)]
+\item 求等比数列$5,\; -15,\; 45,\;\ldots$的第4项，第5项；
+\item 求等比数列$\frac{2}{3},\; \frac{1}{2},\; \frac{3}{8},\;\ldots$的第6项；
+\item 求等比数列$\sqrt{2},\; 1,\; \frac{\sqrt{2}}{2},\; \ldots$的第$n$项；
+\item 求等比数列$1,\; -\frac{1}{2},\; \frac{1}{4},\; \ldots$的第$n+1$项。
+\end{enumerate}
+
+\item 在等比数列$\{a_n\}$中，设公比为$q$.
+\begin{enumerate}[(1)]
+\item 已知$a_9=\frac{4}{9},\quad q=-\frac{1}{3}$, 求$a_1$;
+\item 已知$a_2=10,\quad a_3=20$，求$a_n$;
+\item 已知$a_2=2,\quad a_5=54$，求$q$;
+\item 已知$a_1=1,\quad a_n=256,\quad q=2$，求$n$;
+\item 已知$a_4=27,\quad q=-3$，求$a_7$;
+\item 已知$a_5-a_1=15,\quad a_4-a_2=6$，求$a_n$.
+\end{enumerate}
+
+\item 求下列各组数的等比中项。
+\begin{enumerate}[(1)]
+\item 45与80
+\item $9\frac{3}{8}$与$1\frac{1}{2}$
+\item $7+3\sqrt{5}$与$7-3\sqrt{5}$
+\item $a^4+a^2b^2$与$b^4+a^2b^2\quad (2b\ne 0)$
+\end{enumerate}
+
+\item \begin{enumerate}[(1)]
+\item 在9和243之间插入两个数，使它们同这两个数成等比数列；
+\item 在160和5之间插入4个数，使它们同这两个数成等比数列。  
+\end{enumerate}
+
+\item 某林场计划第一年造林80亩，以后每一年比前一年多造林20\%，第五年造林多少亩（保留到个位）？
+\end{enumerate}
+\end{ex}
+
+\section{等比数列前$n$项的和}
+设等比数列$\{a_n\}$的公比为$q$，首项为$a_1$，由等比数列的定
+义，有
+\[\begin{split}
+    a_2&=a_1q\\
+    a_3&=a_2q\\
+    a_4&=a_3q\\
+    \cdots&\cdots\cdots\\
+    a_{n-1}&=a_{n-2}q\\
+    a_n &=a_{n-1}q
+\end{split}\]
+将上述$n-1\; (n\ge 2)$个等式的等号两边分别相加，得
+\[a_2+a_3+\cdots +a_n=q(a_1+a_2+\cdots +a_{n-1})\]
+即
+\[\begin{split}
+S_n-a_1&=q(S_n-a_n)\\
+(1-q)S&=a_1-a_nq     
+\end{split}\]
+当$q\ne 1$时，$$S_n=\frac{a_1-a_n q}{1-q}$$
+上式对$n=1$显然成立。
+
+当$q=1$时，$S_n=a_1+a_2+\cdots +a_n=na_1$，这样就得出等比数列前$n$项和公式
+\begin{equation}
+    S_n=\begin{cases}
+        na_1,  & q=1\\[1.5ex]
+        \frac{a_1-a_nq}{1-q},& q\ne 1
+    \end{cases}\tag{1}
+\end{equation}
+
+将等比数列的通项公式$a_n=a_1q^{n-1}$代入，可得
+\begin{equation}
+    S_n=\begin{cases}
+        na_1,  & q=1\\[1.5ex]
+        \frac{a_1(1-q^n)}{1-q},& q\ne 1
+    \end{cases}\tag{2}
+\end{equation}
+公式（2）中$q\ne 1$时的结论还可以用下面的方法得到，设
+\begin{equation}
+    S_n=a_1+a_2q+a_3q^2+\cdots+a_1q^{n-2}+a_1q^{n-1} \tag{*}
+\end{equation}
+将上式中各项都乘以$q$，便得到
+\begin{equation}
+  qS_n=a_1q+a_1q^2+\cdots+a_1q^{n-1}+a_1q^n \tag{**}  
+\end{equation}
+
+比较上述两式的右端，可见，（*）的右式中，从第2项至第$n$项与（**）式右端的第1项至第$n-1$项完全相同，因此，以（*）式两边分别减去（**）式两边，便可得到
+\[(1-q)S_n=a_1-a_1q^n\]
+从而得出
+\[S_n=\frac{a_1(1-q^n)}{1-q}\quad (q\ne 1)\]
+
+等比数列的前$n$项和公式（1）和（2），及等比数列的通项公式$a_n=a_1q^{n-1}$其中涉及$a_1, q, n, a_n$和$S_n$这5个量。而它们又通过通项公式及前$n$项和公式联系着，因此只要已知其中的任何三个量，即可得到以其余两个量为未知数的方程组，从而可以求出其余两个量。
+
+\begin{example}
+    求等比数列$\frac{1}{2},\; \frac{1}{4},\; \frac{1}{8},\; \ldots$的第10项及前10项之和。
+\end{example}
+
+\begin{solution}
+已知$a_1=\frac{1}{2},\quad q=\frac{1}{2},\quad n=10$
+\[\therefore\quad a_{10}=a_1q^{10-1}=\frac{1}{2}\cdot \left(\frac{1}{2}\right)^9=\frac{1}{1024},\qquad 
+S_{10}=\frac{\frac{1}{2}\left(1-\frac{1}{2^{10}}\right)}{1-\frac{1}{2}}=\frac{1023}{1024}\]
+\end{solution}
+
+\begin{example}
+     某制糖厂今年制糖5万吨，如果平均每年的产量比上一年增加10％，那么从今年起，几年内可以使总产量达到30万吨（保留到个位）？
+\end{example}
+
+\begin{solution}
+由题意可知，这个糖厂从今年起，平均每年的产量（万吨）组成一个等比数列，记为$\{a_n\}$，其中
+\[a_1=5,\quad q=1+10\%=1.1,\quad S_n=30\]
+于是得到
+\[\frac{5(1-1.1^n)}{1-1.1}=30\]
+
+整理后，得
+\[1.1^n=1.6\]
+两边取对数，得
+\[n\lg 1.1=\lg 1.6\]
+
+$\therefore\quad n=\frac{\lg 1.6}{\lg 1.1}=\frac{0.2041}{0.0414}\approx 5$
+
+答：5年内可以使总产量达到30万吨。
+\end{solution}
+
+\begin{example}
+    已知无穷数列
+$10^{\tfrac{0}{5}},\; 10^{\tfrac{1}{5}},\; 10^{\tfrac{2}{5}},\; \ldots,10^{\tfrac{n-1}{5}},\ldots$
+求证：
+\begin{enumerate}[(1)]
+\item 这个数列是等比数列；
+\item 这个数列中任意一项是它后面第5项的$\frac{1}{10}$;
+\item 这个数列中任意两项的积仍然在这个数列中；
+\item 求该数列的前$n$项之积。
+\end{enumerate}
+\end{example}
+
+\begin{solution}
+\begin{enumerate}[(1)]
+    \item 这个数列中的第$n$项与第$n+1$项分别是
+$10^{\tfrac{n-1}{5}}$与$10^{\tfrac{n}{5}}\; (n\ge 1)$，于是$n+1$项与第$n$项的比为
+\[\frac{a_{n+1}}{a_n}=\frac{10^{\tfrac{n}{5}}}{10^{\tfrac{n-1}{5}}}=10^{\tfrac{n}{5}-\tfrac{n-1}{5}}=10^{\tfrac{1}{5}}\]
+即它们的比值是常数$10^{\tfrac{1}{5}}$，因此这个数是以$10^{\tfrac{1}{5}}$为公比的等比数列。
+
+\item 这个数列的第$n$项$a_n=10^{\tfrac{n-1}{5}}$，第$n+5$项$a_{n+5}=10^{\tfrac{n+5-1}{5}}=10^{\tfrac{n+4}{5}}$，于是
+\[\frac{a_n}{a_{n+5}}=\frac{10^{\tfrac{n-1}{5}}}{10^{\tfrac{n+4}{5}}}=10^{\tfrac{n-1}{5}-\tfrac{n+4}{5}}=10^{-\tfrac{5}{5}}=10^{-1}=\frac{1}{10}\]
+
+这说明，这个数列中的任意一项，每经过5项后，就变大为原来的10倍，例如$a_8=10\cdot a_3,\; a_{19}=10\cdot a_{14}$等。
+
+\item 从该数列中任取两项，假设它们分别是$a_{n_1}$和$a_{n_2}$，则$a_{n_1}=10^{\tfrac{n_1-1}{5}}$, $a_{n_2}=10^{\tfrac{n_2-1}{5}}$（其中$n_1,n_2\in\N$），那么
+\[a_{n_1}\cdot a_{n_2}=10^{\tfrac{n_1-1}{5}}\cdot 10^{\tfrac{n_2-1}{5}}=10^{\tfrac{n_1-1}{5}+\tfrac{n_2-1}{5}}=10^{\tfrac{(n_1+n_2-1)-1}{5}}\]
+
+因为$n_1\ge 1$, $n_2\ge 1$, $n_1\ne n_2$，所以$n_1+n_2>2$，即
+\[n_1+n_2-1>1\]
+又因为$n_1,n_2\in\N$，所以$n_1+n_2-1\in\N$，这就说明$10^{\tfrac{(n_1+n_2-1)-1}{5}}$是数列的第$n_1+n_2-1$项
+\item 
+\[\begin{split}
+    a_1\cdot a_2\cdots a_n&=10^{\tfrac{0}{5}}\cdot 10^{\tfrac{1}{5}}\cdots 10^{\tfrac{n-1}{5}}\\
+    &=10^{\tfrac{0}{5}+\tfrac{1}{5}+\cdots+\tfrac{n-1}{5}}\\&=10^{\tfrac{1}{5}\cdot \tfrac{0+n-1}{2}\cdot n}=10^{\tfrac{n^2-n}{10}}
+\end{split}\]
+\end{enumerate}
+\end{solution}
+
+\begin{ex}
+\begin{enumerate}
+    \item 根据下列条件，求相应的等比数列$\{a_n\}$的前$n$项和$S_n$：
+\begin{enumerate}[(1)]
+\item $a_1=3,\; q=2,\; n=6$;
+\item $a_1=2.4,\; q=-1.5,\; n=5$;
+\item $a_1=8,\; q=\frac{1}{2},\; n=5$;
+\item $a_1=-27,\; q=-\frac{1}{3},\; n=6$.
+\end{enumerate}
+
+    \item \begin{enumerate}[(1)]
+    \item 求等比数列$1,\;2,\;4,\ldots$从第5项到第10项的和；
+    \item 求等比数列$\frac{3}{2},\; \frac{3}{4},\; \frac{3}{8},\ldots$从第3项到第7项的和.   
+    \end{enumerate}
+
+    \item    在等比数列$\{a_n\}$中
+\begin{enumerate}[(1)]
+\item 已知$a_1=-1.5$, $a_4=96$，求$q$及$S_4$；
+\item 已知$q=\frac{1}{2}$, $S_6=3\frac{7}{8}$， 求$a_1$与$a_5$;
+\item 已知$a_1=2$, $S_3=26$，求$q$与$a_3$;
+\item 已知$a_3=1\frac{1}{2}$，$S_3=4\frac{1}{2}$，求$a_1$与$q$．   
+\end{enumerate}
+
+\end{enumerate}
+\end{ex}
+
+\section*{习题三}
+\begin{center}
+    \bfseries A
+\end{center}
+
+\begin{enumerate}
+    \item 在等比数列$\{a_n\}$中：
+\begin{multicols}{2}
+ \begin{enumerate}[(1)]
+    \item 已知$n$，$q$，$a_n$，求$a_1$与$S_n$
+    \item 已知$q$，$n$，$S_n$，求$a_1$与$a_n$
+    \item 已知$a_1$，$q$，$S_n$，求$a_n$
+    \item 已知$q$，$a_n$，$S_n$，求$a_1$
+\end{enumerate}   
+\end{multicols}
+\item 某工厂去年的产值是138万元，计划在今后5年内每年比上一年产值增长10\%。从今年起，到第5年这个厂的年产值是多少？这5年的总产值是多少（精确到万元）？
+\item 画一个边长为2cm的正方形，再以这个正方形的对角线为边画第二个正方形，以第二个正方形的对角线为边画第3个正方形，这样一共画了10个正方形。求：
+\begin{multicols}{2}
+\begin{enumerate}[(1)]
+\item 第10个正方形的面积；
+\item 这10个正方形的面积之和。
+\end{enumerate}
+\end{multicols}
+\item 一个球从100米高处自由落下，每次着地后又跳回到原来高度的一半再落下。当它第10次着地时，共经过了多少米（保留到个位）？
+\item 从盛满20升纯酒精的容器里倒出1升，然后用水填满，再倒出1升混合液，用水填满，这样继续进行，一共倒了3次，这时容器里还有多少升纯酒精（保留到个位）？
+\item 三个数成等比数列，它们的和等于14，它们的积等于64，求这三个数。
+\item 抽气机的活塞每运动一次，从容器里抽出$\frac{1}{8}$的空气，因而使容器里空气的压强降低为原来的$\frac{7}{8}$，已知最初容器里空气的压强是750毫米高水银柱，求活塞运动5次后容器里空气的压强（保留到个位）。
+\item 某种细菌在培养过程中，每30分钟分裂一次（一个分裂为两个），经过4小时，这种细菌由1个可繁殖成多少个？电动机轴的直径从小到大共有5种尺寸，它们的数值（单位：mm）组成一个等比数列，其中最小的数值为40，最大的数值为100，求它们的公比（保留到千分位）。
+\item 一个工厂今年生产某种机器1080台，计划到后年把产量提高到每年生产机器1920台，如果每一年比上一年增长的百分率相等，求这个百分率（精确到1\%）。
+\end{enumerate}
+
+\begin{center}
+    \bfseries B
+\end{center}
+
+\begin{enumerate}\setcounter{enumi}{10}
+    \item 设等比数列$\{a_n\}$的公比是$q$，求证：
+    $a_1a_2\cdots a_n=a^n_1q^{\tfrac{n(n-1)}{2}}$
+    \item 一个等比数列的各项都是正数，求证这个数列的各项的对数组成等差数列。
+    \item 已知$a_1,a_2,a_3,\ldots$是等差数列，$C$是正的常数，求证$C^{a_1},C^{a_2},C^{a_3},\ldots$是等比数列。
+    \item 成等差数列的三个正数之和是15，并且将这三个数分别加上$1,4,19$后，就成等比数列，求这三个数。
+    \item 某工厂的三年生产计划是：每年比上一年增产机器的台数相同。如果第三年比原计划多生产1000台，那么每年比上一年增长的百分数就相同，而且第三年生产的台数恰为原计划三年生产总台数的一半，问原计划每年各生产机器多少台？
+    \item 已知无穷数列$10^{\tfrac{0}{10}},10^{\tfrac{1}{10}},10^{\tfrac{2}{10}},\ldots,10^{\tfrac{n-1}{10}},\ldots$，求证：
+\begin{enumerate}[(1)]
+    \item 这个数列是以$10^{\tfrac{1}{10}}$为公比的等比数列;
+    \item 这个数列中的任意一项是它后面第10项的$\frac{1}{10}$;
+    \item 这个数列中的任意两项的积仍然在这个数列中。
+\end{enumerate}
+
+\item 在数列$\{a_n\}$中，已知$a_1=a\ne 0$，其前$n$项为$S_n$，若$S_1,S_2,\ldots,S_n$是以$q$为公比的等比数列，求证：$a_2,a_3,\ldots,a_n$也是等比数列。
+\end{enumerate}
 
 

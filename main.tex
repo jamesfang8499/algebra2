@@ -42,6 +42,7 @@
 \newenvironment{solution}{\noindent {\bf 解：}}{}
 \newenvironment{analyze}{\noindent {\bf 分析：}}{}
 \newenvironment{rmk}{ {\bf 评述：}}{}
+\newenvironment{remark}{ {\bf 注意：}}{}
 \newenvironment{note}{ {\bf 说明：}}{}
 
 \renewcommand{\emptyset}{\varnothing}
@@ -152,12 +153,18 @@
 \usepackage{ulem}
 \usepackage{enumerate}
 \usepackage{tkz-euclide}
-
-
 \renewcommand{\ge}{\geqslant}
-\renewcommand{\geq}{\geqslant}
 \renewcommand{\le}{\leqslant}
+\renewcommand{\geq}{\geqslant}
 \renewcommand{\leq}{\leqslant}
+\usepackage{esvect}
+\newcommand{\VEC}{\vv}
+
+\newcommand{\pc}[1]{\cos#1+i\sin#1}
+\newcommand{\pcx}[1]{\cos\left(#1\right)+i\sin\left(#1\right)}
+\newcommand{\Lim}[2]{\lim\limits_{#1\to #2}}
+
+
 
 
 \begin{document}
@@ -184,19 +191,15 @@
 
 \mainmatter
 
-\setcounter{chapter}{3}
-% ch4
+\setcounter{chapter}{3}  
+
 \input{1.tex}
 \input{2.tex}
-
-% ch5
-\input{3.tex}
-\input{4.tex}
-
-
-% ch6
+ \input{3.tex}
+ \input{4.tex}
 \input{5.tex}
 \input{6.tex}
+
 
 
 
@@ -206,3 +209,34 @@
 
 
 \end{document}
+
+
+
+\noindent
+\begin{minipage}{.45\textwidth}
+    \centering
+\begin{tikzpicture}[>=stealth]
+
+    
+\end{tikzpicture}  
+\captionof{figure}{}
+\end{minipage}\hfill
+\begin{minipage}{.45\textwidth}
+\centering
+\begin{tikzpicture}[>=stealth]
+
+
+\end{tikzpicture}   
+\captionof{figure}{} 
+\end{minipage}
+
+
+
+
+
+
+
+
+
+
+

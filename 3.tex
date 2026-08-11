@@ -66,7 +66,7 @@ $-1$的1次幂，2次幂，3次幂，4次幂，……排列成一列
 再看下面的例子：
 
 函数$y=\frac{1}{x^{3}}$, 当$x$依次取$1,2,3,\ldots,n\; (n\in\N)$时，得到一列数：
-\[1, \frac 18, \frac {1}{27}, \ldots, \frac {1}{m^{3}}\]
+\[1, \frac 18, \frac {1}{27}, \ldots, \frac {1}{n^{3}}\]
 
 函数$y=x^{2}-1$, 当$x$依次取$1,2,3,4,\ldots,n\; (n\in \N)$
 时，得到一列数
@@ -169,8 +169,7 @@ $a_1=2$, $a_{n+1}=a_n+3$.
     \item $a_n=n^2+2$
 \end{enumerate}    
 \end{multicols}
-\item 数列$\{a_n\}$中，已知
-$a_1=2$，且$(n\in\N)$.
+\item 数列$\{a_n\}$中，已知$a_1=2$，且$a_{n+1}=a_n+\frac{4}{a_n},\quad (n\in\N)$.
 \item 数列$\{a_n\}$的图象如图5.3.
 \end{enumerate}
 \end{ex}
@@ -1576,7 +1575,7 @@ $\therefore\quad $该数列是等差数列，其公差为$-\frac{1}{2}\lg 2$，�
     
 $\therefore\quad $数列是等比数列，且公比是2。
 \item 首项$a_1=\frac{1}{3}\x2=\frac{2}{3}$, $a_{10}=\frac{1}{3}\x2^{10}=\frac{1024}{3}$.
-\item 设$a_n=\frac{1}{3}\x2^n=259$，则$n=8+\log_2 3$不是整数，所以256不是数列中的项。
+\item 设$a_n=\frac{1}{3}\x2^n=256$，则$n=8+\log_2 3$不是整数，所以256不是数列中的项。
 
 设$a_n=\frac{1}{3}\x2^n=170\frac{2}{3}=\frac{512}{3}$则$n=9$，所以$170\frac{2}{3}$是
 该数列的第9项。
@@ -1687,7 +1686,7 @@ $\therefore\quad a_n=a_1\cdot q^{n-1}=\frac{a_1}{q}\cdot q^n$
 
 \begin{solution}
     设数列的公比为$q$. 由$a_1=1$得
-\[a_7=8=a_1 q^6=q^5\]
+\[a_7=8=a_1 q^6=q^6\]
 $\therefore\quad q=\pm\sqrt{2}$
 
 答：插入的5个数是$\sqrt{2},\; 2,\; 2\sqrt{2},\; 4,\; 4\sqrt{2}$或$-\sqrt{2},\; 2,\; -2\sqrt{2},\; 4,\; -4\sqrt{2}$.
@@ -1793,7 +1792,7 @@ $\therefore\quad a_k\cdot a_{\ell}=a_m\cdot a_n$
 即
 \[\begin{split}
 S_n-a_1&=q(S_n-a_n)\\
-(1-q)S&=a_1-a_nq     
+(1-q)S_n&=a_1-a_nq     
 \end{split}\]
 当$q\ne 1$时，$$S_n=\frac{a_1-a_n q}{1-q}$$
 上式对$n=1$显然成立。

@@ -265,7 +265,7 @@ $
 \noindent
 \begin{minipage}{.5\textwidth}
     \[\begin{split}
-\frac{z_1}{z_2}=\frac{1+\sqrt{2}i}{7+\sqrt{3}i}&=\frac{\left(1+2\sqrt{3}i\right)\left(7-\sqrt{3}i\right)}{\left(7+\sqrt{3}i\right)\left(7-\sqrt{3}i\right)}\\
+\frac{z_1}{z_2}=\frac{1+2\sqrt{3}i}{7+\sqrt{3}i}&=\frac{\left(1+2\sqrt{3}i\right)\left(7-\sqrt{3}i\right)}{\left(7+\sqrt{3}i\right)\left(7-\sqrt{3}i\right)}\\
 &=\frac{13+13\sqrt{3}i}{52}=\frac{1+\sqrt{3}i}{4}\\
 &=\frac{1}{2}\left(\frac{1}{2}+\frac{\sqrt{3}}{2}i\right)\\
 &=\frac{1}{2}\left(\pc{\frac{\pi}{3}}\right)
@@ -486,16 +486,17 @@ $\therefore\quad 1-i$的四次方根是
 \[\begin{split}
     &\sqrt[8]{2}\left(\pc{\frac{7\pi}{16}}\right)\\
     &\sqrt[8]{2}\left[\pcx{\frac{7\pi}{16}+\frac{\pi}{2}}\right]\\
-    =&\sqrt[8]{2}\left(\pc{\frac{7\pi}{16}}\right)\cdot \left(\pc{\frac{\pi}{2}}\right)\\
+    &\quad=\sqrt[8]{2}\left(\pc{\frac{7\pi}{16}}\right)\cdot \left(\pc{\frac{\pi}{2}}\right)\\
     &\sqrt[8]{2}\left[\pcx{\frac{7\pi}{16}+\frac{\pi}{2}\x 2}\right]\\
-    =&\sqrt[8]{2}\left(\pc{\frac{7\pi}{16}}\right)\cdot \left(\pc{\frac{\pi}{2}}\right)^2\\
+    &\quad=\sqrt[8]{2}\left(\pc{\frac{7\pi}{16}}\right)\cdot \left(\pc{\frac{\pi}{2}}\right)^2\\
     &\sqrt[8]{2}\left[\pcx{\frac{7\pi}{16}+\frac{\pi}{2}\x 3}\right]\\
-    =&\sqrt[8]{2}\left(\pc{\frac{7\pi}{16}}\right)\cdot \left(\pc{\frac{\pi}{2}}\right)^3\\
+    &\quad=\sqrt[8]{2}\left(\pc{\frac{7\pi}{16}}\right)\cdot \left(\pc{\frac{\pi}{2}}\right)^3\\
 \end{split}\]
-
-不难看出这四个复数构成一个等比数列，其首项为$\sqrt[8]{2}\left(\pc{\frac{7\pi}{16}}\right)$，公比为$\left(\pc{\frac{\pi}{2}}\right)$
 \end{enumerate}
 \end{note}
+
+
+不难看出这四个复数构成一个等比数列，其首项为$\sqrt[8]{2}\left(\pc{\frac{7\pi}{16}}\right)$，公比为$\left(\pc{\frac{\pi}{2}}\right)$
 
 一般来说，复数$r(\pc{\theta})$的$n$个$n$次方根，组成一个等比数列，其首项为$\sqrt[n]{r}\left(\pc{\frac{\theta}{n}}\right)$，公比为$\left(\pc{\frac{2\pi}{n}}\right)$.
 
@@ -563,8 +564,8 @@ $\therefore\quad$1的立方根是$\pc{\frac{2k\pi}{3}}\; (k=0,1,2)$，即
     即\[x^2-y^2+2xyi=3-4i\]
     根据复数相等的条件可得
 \[\begin{cases}
-    x^2+y^2=3, & (1)\\
-    2xy,& (2)
+    x^2-y^2=3, & (1)\\
+    2xy=-4,& (2)
 \end{cases}\]
 $(1)^2+(2)^2$得：$(x^2+y^2)^2=25$
 
@@ -808,12 +809,12 @@ $\therefore\quad $原方程的解是$3i$.
 \end{example}
 
 \begin{analyze}
-    三次方程解起来比较困难，但考虑到$|\bar z|=z$，可复复数相等则模一定相等的道理，以达到降次的目的.
+    三次方程解起来比较困难，但考虑到$|\bar z|=z$，可利用复数相等则模一定相等的道理，以达到降次的目的.
 \end{analyze}
 
 \begin{solution}
 在方程两边取模，得
-\[|\bar z^3|=|z|\Leftrightarrow |\bar z|^3=|z|\Leftrightarrow |z|^3-|z|=0\]
+\[|\bar z^3|=|z|\Longleftrightarrow |\bar z|^3=|z|\Longleftrightarrow |z|^3-|z|=0\]
 $\therefore\quad |z|\left(|z|^2-1\right)=0$
 
 解之得$|z|=0$或$|z|=1$
@@ -1115,7 +1116,7 @@ $\because\quad z=\cos\theta+i\sin\theta$，代入上式有
 \begin{solution}
 由$|z|=1$知$z\cdot \bar z=1$.
 
-设$z=a+bi\; a,b\in\R$
+设$z=a+bi\quad a,b\in\R$
 \[\begin{split}
     |z^2-z+1|=|z^2-z+1|\cdot |\bar z|&=|z^2\cdot \bar z-z\cdot \bar z+\bar z|\\
     &=|z-1+\bar z|=|2a-1|
@@ -1391,7 +1392,6 @@ $\therefore\quad C$点的轨迹是长轴垂直于$Ox$轴且交于$F$点的竖立
 上运动，在复平面上求出复数$\delta$对应的点的轨迹方程，并画出图形。
 \end{example}
 
-\begin{analyze}
 \textbf{分析1：}
 (1)是双曲线的左半支，$\omega$对应的点在其上运动，利用(1)的参数方程可以写出$\omega$，从而可得出$\delta$的表达式，使问题获解。
 
@@ -1403,9 +1403,9 @@ $\therefore\quad C$点的轨迹是长轴垂直于$Ox$轴且交于$F$点的竖立
 
 \textbf{分析3：}
 由于$\omega$ 对应的点$A$在已知曲线$C$上运动，$\delta =\omega i+3$, 根据复数乘法与加法的意义，也可以利用几何方法处理之。
-\end{analyze}
 
-\begin{solution}
+
+
    \textbf{解1：}由(1)可得$a=3,\; c=5,\; b=4$, 而可把(1)写成普通方程： 
 \[\frac{x^2}{9}-\frac{y^2}{16}=1,\quad (x<0)\]
 
@@ -1460,15 +1460,15 @@ $|\delta -(3+5i)|-|\delta -(3-5i)|=6$，
 \textbf{解3：}由于$\omega$ 对应的点$A$在曲线$C$上运动，$\delta =\omega i+3$，从而把曲线$C$绕原点逆时针旋转$\frac{\pi}{2}$，再向右平移3个单位，便
 得到$\delta $对应的点$B$的轨迹$C'$（图6.31）．此时，曲线$C$的焦点$\pm 5$变成$\pm 5i+3$，也就是$3\pm 5i$. 由于旋转中，曲线的形状、大小均不变，所以$2a=6$，由此，曲线$C'$的方程应为
 \[|\delta -(3+5i)|-|\delta -(3-5i)|=6\]
-\end{solution}
+
 
 
 \begin{example}
     若$\frac{z}{z-1}$为纯虚数，求点$x$的轨迹.
 \end{example}
 
-\begin{solution}
-\textbf{解1：}设$\frac{z}{z-i}=bi\; (b\in\R,\; b\ne 0)$，则$(1-bi)z=-bi$. 由于$1-bi\ne 0$，
+
+\textbf{解1：}设$\frac{z}{z-1}=bi\; (b\in\R,\; b\ne 0)$，则$(1-bi)z=-bi$. 由于$1-bi\ne 0$，
 
 $\therefore\quad z=\frac{-bi}{1-bi}=\frac{b^2-bi}{1+b^2}$
 
@@ -1504,7 +1504,7 @@ $\therefore\quad \begin{cases}
     -y\ne 0
 \end{cases}$
 即$\left(x-\frac{1}{2}\right)^2+y^2=\frac{1}{4}\; (y\ne 0)$（以下略）.
-\end{solution}
+
 
 \section*{习题十三}
 \begin{center}
@@ -1537,11 +1537,14 @@ $\therefore\quad \begin{cases}
 \end{enumerate}
 
 \subsection{其他几何问题}
-    复数及其计算有明确的几何意义。因此，复数与几何有天然的联系，除了上述轨迹问题以外，再看几个例子。
+
 
 \noindent
-\begin{minipage}{.55\textwidth}
+\begin{minipage}{.6\textwidth}
     \CTEXindent
+
+    复数及其计算有明确的几何意义。因此，复数与几何有天然的联系，除了上述轨迹问题以外，再看几个例子。
+
 \begin{example}
     三个互不相等的复数$z_1$，$z_2$，$z_3$满足
 $z_1+z_2+z_3=0$, 且$|z_1|=|z_2|=|z_3|$，这三个复数在复平面上的对应点为$A,B,C$，
@@ -1549,7 +1552,7 @@ $z_1+z_2+z_3=0$, 且$|z_1|=|z_2|=|z_3|$，这三个复数在复平面上的对�
 求证：$\triangle BAC$是正三角形（图6.32）.
 \end{example}    
 \end{minipage}\hfill
-\begin{minipage}{.4\textwidth}
+\begin{minipage}{.36\textwidth}
 \centering
 \begin{tikzpicture}[>=stealth]
     \draw[->](-2,0)--(2,0)node[below]{$x$};
@@ -1570,7 +1573,6 @@ $z_1+z_2+z_3=0$, 且$|z_1|=|z_2|=|z_3|$，这三个复数在复平面上的对�
 \captionof{figure}{}
 \end{minipage}
 
-\begin{proof}
 \textbf{证明1：}
 $|z_1|=|z_2|=|z_3|\Rightarrow $原点$O$是$\triangle ABC$的外心。
 
@@ -1653,13 +1655,13 @@ $\therefore\quad$欲证(*)，只要证
 \begin{cases}
     -z_3=z_1+z_2\\
     -\bar z_3=\bar z_1+\bar z_2
-\end{cases}&\Rightarrow |x_3|^2 =z_1\bar z_1+z_2\bar z_2+z_1 z_2+z_2\bar{\bar z_1}\\
-&\Rightarrow |x_3|^2 =|z_1|^2+|z_2|^2+z_1 \bar z_2+\bar z_1 z_2\\
-&\Rightarrow z_1 \bar z_2+\bar z_1 z_2=|x_3|^2-|z_1|^2-|z_2|^2=-|x_3|^2=-r^2
+\end{cases}&\Rightarrow |z_3|^2 =z_1\bar z_1+z_2\bar z_2+z_1 z_2+z_2\overline{\overline{z_1}}\\
+&\Rightarrow |z_3|^2 =|z_1|^2+|z_2|^2+z_1 \bar z_2+\bar z_1 z_2\\
+&\Rightarrow z_1 \bar z_2+\bar z_1 z_2=|z_3|^2-|z_1|^2-|z_2|^2=-|z_3|^2=-r^2
 \end{split}\]
 
 $\therefore\quad $(**)成立，从而(*)成立，所以$\triangle ABC$是正三角形。
-\end{proof}
+
 
 \begin{example}
  已知$z\in\mathbb{C}$，且$|z_1|=|z_2|=|z_1-z_2|=a\; (a\in\R^+)$,
@@ -1825,7 +1827,7 @@ $\therefore\quad $(**)成立，从而(*)成立，所以$\triangle ABC$是正三�
 \item 复数的除法：
 \[\begin{split}
     \frac{z_1}{z_2}&=\frac{a_1+b_1i}{a_2+b_2i}=\frac{a_1a_2+b_1b_2}{a^2_2+b^2_2}+\frac{a_2b_1-a_1b_2}{a^2_2+b^2_2}i\\
-    \frac{z_1}{z_2}&=\frac{r_1(\pc{\theta_1})}{r_2(\pc{\theta_2}}=\frac{r_1}{r_2}[\pcx{\theta_1-\theta_2}]
+    \frac{z_1}{z_2}&=\frac{r_1(\pc{\theta_1})}{r_2(\pc{\theta_2})}=\frac{r_1}{r_2}[\pcx{\theta_1-\theta_2}]
 \end{split}\]
 
 商所对应的向量由$\vv{OZ_1}$绕原点顺时针方向旋转$\theta_2$角，模缩小到原来的$r_2$分之一来确定。商的几何意义经常用来确定向量$\vv{OZ_1}$与$\vv{OZ_2}$的夹角。
